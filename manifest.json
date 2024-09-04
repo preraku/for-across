@@ -3,10 +3,7 @@
   "name": "For Across",
   "version": "1.0",
   "description": "Toggle visibility of specific elements on downforacross.com",
-  "permissions": [
-    "activeTab",
-    "storage"
-  ],
+  "permissions": ["activeTab", "storage", "scripting"],
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
@@ -25,6 +22,17 @@
       ],
       "js": ["content.js"]
     }
-  ]
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "commands": {
+    "cycleToggleState": {
+      "suggested_key": {
+        "default": "Ctrl+B",
+        "mac": "Command+B"
+      },
+      "description": "Cycle through toggle states"
+    }
+  }
 }
-
